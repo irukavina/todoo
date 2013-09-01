@@ -1,6 +1,8 @@
 Todo::Application.routes.draw do
+  root to: 'todos#show'
+
   namespace :api do
-    resource :sessions, only: [:create, :destroy]
+    resource :sessions, only: [:create]
     resource :registrations, only: [:create]
     resources :tasks, only: [:index]
   end

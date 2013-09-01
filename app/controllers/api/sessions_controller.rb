@@ -1,9 +1,12 @@
 class Api::SessionsController < Api::BaseController
-  before_filter :require_authentication, only: destroy
+  before_filter :require_authentication, only: :destroy
   def create
     if !signed_in?
-      current_user.reset_auth_token!
-      render json: current_user.auth_token_hash
+      user = User.find_by_email(sign_in_params[:email]).authenticate(sign_in_params[:password])
+      if user
+        user.reset_auth_token!
+        render json: user.auth_token_hash
+      end
     end
   end
 
@@ -12,6 +15,11 @@ class Api::SessionsController < Api::BaseController
     if signed_in?
       current_user.reset_auth_token!
     end
+  end
+
+  private
+  def sign_in_params
+    params.permit(:email, :password)
   end
 
 end
