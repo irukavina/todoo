@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -45,3 +45,17 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'activerecord-session_store'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'database_cleaner'
+  gem 'json_spec'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+
+  gem 'awesome_print'
+end
