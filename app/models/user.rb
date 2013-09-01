@@ -1,5 +1,13 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation
   has_secure_password
-  validates_presence_of :password, :on => :create
+  validates :email, presence: true, email: true
+  validates_presence_of :password, on: :create
+
+  before_save :ensure_auth_token_present
+
+  private
+
+  def ensure_auth_token_present
+     self.auth_token ||= SecureRandom.uuid
+  end
 end

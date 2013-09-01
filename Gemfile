@@ -59,3 +59,5 @@ group :development do
 
   gem 'awesome_print'
 end
+
+gem 'mail'

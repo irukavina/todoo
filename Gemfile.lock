@@ -158,6 +158,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   json_spec
+  mail
   meta_request
   pg
   rails (= 4.0.0)
