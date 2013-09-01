@@ -9,7 +9,6 @@ class Api::BaseController < ApplicationController
   private
   def require_authentication
     authenticate_or_request_with_http_token do |token, options|
-      puts 'x'* 100
       @current_user = User.where(auth_token: token).first
     end
   end

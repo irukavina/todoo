@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lib/index
+//= require bootstrap
 //= require todo/index
+
 //= require_tree .

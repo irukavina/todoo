@@ -61,3 +61,5 @@ group :development do
 end
 
 gem 'mail'
+
+gem 'bootstrap-sass', '~> 2.3.2.2'

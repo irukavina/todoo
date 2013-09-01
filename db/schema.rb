@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20130901150222) do
     t.string   "description", default: "",    null: false
     t.boolean  "archived",    default: false, null: false
     t.boolean  "completed",   default: false, null: false
-    t.date     "due_on"
+    t.date     "due_date"
     t.integer  "priority",    default: 0,     null: false
     t.datetime "created_at"
     t.datetime "updated_at"

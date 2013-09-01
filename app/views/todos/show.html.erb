@@ -1,10 +1,19 @@
+
 <div ng-app="todoApp">
   <div class="container" authentication-required>
-    <div id="login-wrapper">
-      <div sessions-form></div>
-      <div registrations-form></div>
+    <div class="row">
+      <div class="span6">
+        <h1>Todoo!</h1>
+      </div>
     </div>
-    <div id="content-wrapper" ng-view>
+    <div id="login-wrapper" class="row">
+        <div sessions-form class="offset3 span6 well"></div>
+        <div registrations-form class="offset3 span6 well"></div>
+    </div>
+
+    <div id="content-wrapper" class="row">
+      <div class="well span12" ng-view>
+      </div>
 
     </div>
   </div>

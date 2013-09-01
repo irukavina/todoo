@@ -10,11 +10,5 @@ angular.module('todoApp.directives').directive('sessionsForm', ['sessionService'
         $scope.session.$save().success((data, status, xhr) ->
           sessionService.signIn(data)
         )
-
-#      $scope.destroy = () ->
-#        $scope.session.$destroy().success((data, status, xhr) ->
-#          sessionService.signOut()
-#        )
-
   }
 ])

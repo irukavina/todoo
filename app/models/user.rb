@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   before_save :ensure_auth_token_present
 
+  has_many :tasks
+
   def auth_token_hash
     { auth_token: self.auth_token }
   end

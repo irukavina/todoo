@@ -1,1 +1,32 @@
-<h1>Home</h1>
+<table class="table">
+
+    <thead>
+    <caption>Your tasks</caption>
+    <tr>
+        <th>Completed</th>
+        <th>Description</th>
+        <th>Due date</th>
+        <th>Priority</th>
+        <th colspan="2"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat='task in tasks' ng-class='{success:task.completed}'>
+        <td><input type="checkbox" ng-model="task.completed" ng-click="updateTask(task)"/></td>
+        <td>{{task.description}}</td>
+        <td>{{task.due_date}}</td>
+        <td>{{task.priority | priority}}</td>
+        <td>
+            <button class="btn btn-primary" ng-click="editTask(task)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" ng-click="deleteTask(task)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+    <tr>
+        <td>
+            <button class="btn btn-primary" ng-click="createTask()">Create task</button>
+        </td>
+    </tr>
+</table>

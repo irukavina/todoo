@@ -4,7 +4,7 @@ Todo::Application.routes.draw do
   namespace :api do
     resource :sessions, only: [:create]
     resource :registrations, only: [:create]
-    resources :tasks, only: [:index]
+    resources :tasks, only: [:index, :create, :update, :show, :destroy]
   end
 
 

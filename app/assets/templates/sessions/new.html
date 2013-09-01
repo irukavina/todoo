@@ -1,10 +1,25 @@
-<form name="newSessionForm" ng-submit='create()'>
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" placeholder="Email" ng-model="session.email"/>
+<form name="newSessionForm" ng-submit='create()' class="form-horizontal">
+    <legend>Sign in</legend>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Password" ng-model="session.password"/>
+    <div class="control-group">
+        <label class="control-label" for="email">E-mail</label>
 
-    <button type="submit">Login</button>
+        <div class="controls">
+            <input type="email" id="email" name="email" placeholder="Email" ng-model="session.email"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="password">Password</label>
+
+        <div class="controls">
+            <input type="password" id="password" name="password" placeholder="Password" ng-model="session.password"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn">Login</button>
+        </div>
+    </div>
 </form>
 
