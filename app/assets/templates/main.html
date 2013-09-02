@@ -2,10 +2,18 @@
     <thead>
     <tr>
 
-        <th ng-class="{order:order=='completed', reversed:reversed&&order=='completed'}" ng-click="setOrder('completed')">Completed</th>
-        <th ng-class="{order:order=='description', reversed:reversed&&order=='description'}" ng-click="setOrder('description')">Description</th>
-        <th ng-class="{order:order=='due_date', reversed:reversed&&order=='due_date'}" ng-click="setOrder('due_date')">Due date</th>
-        <th ng-class="{order:order=='priority', reversed:reversed&&order=='priority'}" ng-click="setOrder('priority')">Priority</th>
+        <th ng-class="{order:order=='completed', reversed:reversed&&order=='completed'}"
+            ng-click="setOrder('completed')">Completed
+        </th>
+        <th ng-class="{order:order=='description', reversed:reversed&&order=='description'}"
+            ng-click="setOrder('description')">Description
+        </th>
+        <th ng-class="{order:order=='due_date', reversed:reversed&&order=='due_date'}" ng-click="setOrder('due_date')">
+            Due date
+        </th>
+        <th ng-class="{order:order=='priority', reversed:reversed&&order=='priority'}" ng-click="setOrder('priority')">
+            Priority
+        </th>
         <th colspan="2"></th>
     </tr>
     </thead>
@@ -23,9 +31,9 @@
         </td>
     </tr>
     </tbody>
-    <tr>
-        <td>
-            <button class="btn btn-primary" ng-click="createTask()">Create task</button>
-        </td>
-    </tr>
+
 </table>
+<div class="form-controls">
+    <button class="btn btn-primary" ng-click="createTask()">Create task</button>
+    <button class="btn btn-warning" ng-click="archiveCompletedTasks()">Archive completed tasks</button>
+</div>

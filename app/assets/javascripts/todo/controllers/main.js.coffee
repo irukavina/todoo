@@ -31,4 +31,8 @@ angular.module('todoApp.controllers').controller('MainCtrl', ['$scope', '$locati
       task.remove().then( ->
         $scope.reloadTasks()
       )
+
+  $scope.archiveCompletedTasks = ->
+    Tasks.archiveCompleted().then ->
+      $scope.reloadTasks()
 ])

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+
   validates :email, presence: true, email: true, uniqueness: true
   validates_presence_of :password, on: :create
   validates :password, length: 8..20
@@ -11,6 +12,10 @@ class User < ActiveRecord::Base
   def authentication_data_hash
     { email: self.email,
       auth_token: self.auth_token }
+  end
+
+  def archive_completed_tasks!
+    tasks.where(completed: true).update_all(archived: true)
   end
 
   def reset_auth_token!

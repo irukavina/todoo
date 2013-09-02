@@ -137,4 +137,31 @@ describe Api::TasksController do
     end
   end
 
+  describe 'POST archive' do
+    describe 'authorized' do
+      let(:user) { User.create(valid_user_params) }
+      let(:task) { user.tasks.create }
+      before :each do
+        authenticate_user(user)
+      end
+
+      it 'returns status 200' do
+        post :archive
+        expect(response.status).to eq(200)
+      end
+
+      it 'archives completed tasks' do
+        allow(user).to receive(:archive_completed_tasks!)
+        post :archive
+        expect(user).to have_received(:archive_completed_tasks!)
+      end
+    end
+
+    describe 'unauthorized' do
+      it 'returns status 401' do
+        post :archive
+        expect(response.status).to eq(401)
+      end
+    end
+  end
 end

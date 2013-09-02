@@ -38,6 +38,11 @@ class Api::TasksController < Api::BaseController
     end
   end
 
+  def archive
+    current_user.archive_completed_tasks!
+    head status: :ok
+  end
+
   private
   def task_from_params
     current_user.tasks.where(id: params_id).first
