@@ -33,6 +33,7 @@ angular.module('todoApp.controllers').controller('TasksIndexCtrl', ['$scope', '$
       )
 
   $scope.archiveCompletedTasks = ->
-    Tasks.archiveCompleted().then ->
-      $scope.reloadTasks()
+    if confirm("Are you sure you want to archive the completed tasks?")
+      Tasks.archiveCompleted().then ->
+        $scope.reloadTasks()
 ])
