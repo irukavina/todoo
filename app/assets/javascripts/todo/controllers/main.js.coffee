@@ -1,7 +1,7 @@
 angular.module('todoApp.controllers').controller('MainCtrl', ['$scope', '$location', 'Tasks', '$dialog', ($scope, $location, Tasks, $dialog) ->
   $scope.newTask = { description: '' }
 
-  $scope.order = 'created_at'
+  $scope.order = 'completed'
   $scope.reversed = false
   $scope.setOrder = (order) ->
     if order == $scope.order
