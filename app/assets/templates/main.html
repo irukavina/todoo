@@ -1,0 +1,28 @@
+<div class="container" authentication-required>
+    <div class="row">
+        <div class="span7">
+            <h1>Todoo!</h1>
+        </div>
+        <div class="span5" ng-controller="SessionCtrl" ng-show="isSignedIn()">
+            <div class="row">
+                <div class="span3">
+                    <span>You are signed in as {{email()}}.</span>
+                </div>
+                <div class="span2">
+                    <button id="sign-out" ng-click="signOut()">Sign out</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="login-wrapper" class="row">
+        <div sessions-form class="offset3 span6 well"></div>
+        <div registrations-form class="offset3 span6 well"></div>
+    </div>
+
+    <div id="content-wrapper" class="row">
+        <div class="well span12" ng-view>
+        </div>
+
+    </div>
+</div>
