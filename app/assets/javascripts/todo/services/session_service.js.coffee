@@ -1,5 +1,5 @@
 "use strict"
-angular.module("todoApp.services").service "sessionService", ["userSessionService", 'userRegistrationService', '$cookieStore', 'authService', 'Restangular', (userSessionService, userRegistrationService, $cookieStore, authService, Restangular) ->
+angular.module("todoApp.services").service "SessionService", ["UserSessionService", 'UserRegistrationService', '$cookieStore', 'authService', 'Restangular', (userSessionService, userRegistrationService, $cookieStore, authService, Restangular) ->
   config =
     userSession: new userSessionService()
     userRegistration: new userRegistrationService()

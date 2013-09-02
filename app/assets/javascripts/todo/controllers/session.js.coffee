@@ -1,9 +1,9 @@
-angular.module("todoApp.controllers").controller('SessionCtrl', ["$scope", '$route', 'sessionService', ($scope, $route, sessionService) ->
-  $scope.email = sessionService.email
+angular.module("todoApp.controllers").controller('SessionCtrl', ["$scope", '$route', 'SessionService', ($scope, $route, SessionService) ->
+  $scope.email = SessionService.email
 
-  $scope.isSignedIn = sessionService.isSignedIn
+  $scope.isSignedIn = SessionService.isSignedIn
 
   $scope.signOut = ->
-    sessionService.signOut()
+    SessionService.signOut()
     $route.reload()
 ])

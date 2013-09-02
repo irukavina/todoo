@@ -1,5 +1,5 @@
 "use strict"
-angular.module("todoApp.services").factory "userRegistrationService", ["$http", ($http) ->
+angular.module("todoApp.services").factory "UserRegistrationService", ["$http", ($http) ->
   instance = (options) ->
     angular.extend(@, options)
 
@@ -9,7 +9,7 @@ angular.module("todoApp.services").factory "userRegistrationService", ["$http", 
     @password_confirmation = ''
 
   instance::$save = ->
-    $http.post 'http://localhost:3000/api/registrations',
+    $http.post '/api/registrations',
       email: @email
       password: @password
       password_confirmation: @password_confirmation

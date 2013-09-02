@@ -1,5 +1,5 @@
 "use strict"
-angular.module("todoApp.services").factory "userSessionService", ["$http", ($http) ->
+angular.module("todoApp.services").factory "UserSessionService", ["$http", ($http) ->
   instance = (options) ->
     angular.extend(@, options)
 
@@ -8,12 +8,12 @@ angular.module("todoApp.services").factory "userSessionService", ["$http", ($htt
     @password = ''
 
   instance::$save = ->
-    $http.post 'http://localhost:3000/api/sessions',
+    $http.post '/api/sessions',
       email: @email
       password: @password
 
   instance::$destroy = ->
-    $http.delete 'http://localhost:3000/api/sessions'
+    $http.delete '/api/sessions'
 
   instance
 ]

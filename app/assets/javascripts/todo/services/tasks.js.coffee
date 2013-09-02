@@ -1,10 +1,10 @@
-angular.module('todoApp.services').factory('Tasks', ['Restangular', 'sessionService', (Restangular, sessionService) ->
+angular.module('todoApp.services').factory('Tasks', ['Restangular', 'SessionService', (Restangular, SessionService) ->
   {
     all: () ->
-      sessionService.refreshAuthTokenHeaders()
+      SessionService.refreshAuthTokenHeaders()
       Restangular.all('api/tasks')
     one: (id) ->
-      sessionService.refreshAuthTokenHeaders()
+      SessionService.refreshAuthTokenHeaders()
       Restangular.one('api/tasks', id)
 
   }
