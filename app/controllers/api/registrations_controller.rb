@@ -6,7 +6,7 @@ class Api::RegistrationsController < Api::BaseController
     if user.valid? && user.save
        render json: user.authentication_data_hash, status: :created
     else
-      head status: :unprocessable_entity
+      render json: user.errors.messages, status: :unprocessable_entity
     end
   rescue ActiveRecord::RecordNotUnique
     head status: :unprocessable_entity
