@@ -1,4 +1,4 @@
-angular.module('todoApp.controllers').controller('MainCtrl', ['$scope', '$location', 'Tasks', '$dialog', ($scope, $location, Tasks, $dialog) ->
+angular.module('todoApp.controllers').controller('TasksIndexCtrl', ['$scope', '$location', 'Tasks', '$dialog', ($scope, $location, Tasks, $dialog) ->
   $scope.newTask = { description: '' }
 
   $scope.order = 'completed'

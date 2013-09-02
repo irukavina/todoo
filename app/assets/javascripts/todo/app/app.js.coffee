@@ -5,8 +5,8 @@ angular.module('todoApp.services', ['ngCookies', 'restangular'])
 angular.module('todoApp.controllers', [])
 angular.module('todoApp', ['todoApp.templates', 'todoApp.directives', 'todoApp.services', 'todoApp.controllers', 'todoApp.filters', 'ui.bootstrap']).config(['$routeProvider', 'templateUrls', ($routeProvider, templateUrls) ->
   $routeProvider.when('/', {
-    templateUrl: templateUrls['main'],
-    controller: 'MainCtrl'
+    templateUrl: templateUrls['tasks/index'],
+    controller: 'TasksIndexCtrl'
   }).when('/tasks/new', {
     templateUrl: templateUrls['tasks/form'],
     controller: 'NewTaskCtrl'
