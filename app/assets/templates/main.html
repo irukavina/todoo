@@ -1,14 +1,14 @@
 <div class="container" authentication-required>
     <div class="row">
-        <div class="span7">
+        <div class="span4">
             <h1>Todoo!</h1>
         </div>
-        <div class="span5" ng-controller="SessionCtrl" ng-show="isSignedIn()">
+        <div class="session span8" ng-controller="SessionCtrl" ng-show="isSignedIn()">
             <div class="row">
-                <div class="span3">
+                <div class="span6 description">
                     <span>You are signed in as {{email()}}.</span>
                 </div>
-                <div class="span2">
+                <div class="span2 actions">
                     <button id="sign-out" ng-click="signOut()">Sign out</button>
                 </div>
             </div>

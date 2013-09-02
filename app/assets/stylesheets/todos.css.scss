@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
+.session {
+  margin-top: 20px;
+  .description, .actions {
+    text-align: right;
+  }
+}
+
 table {
   tr {
     th:first-child {
