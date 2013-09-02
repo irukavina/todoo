@@ -7,7 +7,7 @@ class Api::SessionsController < Api::BaseController
         user.reset_auth_token!
         render json: user.authentication_data_hash, status: :created
       else
-        head status: :forbidden
+        render json: { general: ['No such login/password combination was found'] }, status: :forbidden
       end
     end
   end

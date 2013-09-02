@@ -16,6 +16,17 @@
             <input type="password" id="password" name="password" placeholder="Password" ng-model="session.password"/>
         </div>
     </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <div ng-show='errors.general'>
+                <div class="text-error" ng-repeat='error in errors.general'>
+                    {{error}}
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="control-group">
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">Sign in</button>
