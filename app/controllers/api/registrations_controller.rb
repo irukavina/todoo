@@ -3,11 +3,13 @@ class Api::RegistrationsController < Api::BaseController
 
   def create
     user = User.new(registration_params)
-    if user.save!
-       render json: user.authentication_data_hash
+    if user.valid? && user.save
+       render json: user.authentication_data_hash, status: :created
     else
-      head status: :unauthorized
+      head status: :unprocessable_entity
     end
+  rescue ActiveRecord::RecordNotUnique
+    head status: :unprocessable_entity
   end
 
   private

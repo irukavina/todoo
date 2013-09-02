@@ -2,7 +2,7 @@ class Api::TasksController < Api::BaseController
   before_filter :require_authentication
 
   def create
-    render json: current_user.tasks.create(task_params_without_id).to_json
+    render json: current_user.tasks.create(task_params_without_id).to_json, status: :created
   end
 
   def update
