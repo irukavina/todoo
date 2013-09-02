@@ -4,7 +4,7 @@ class Api::RegistrationsController < Api::BaseController
   def create
     user = User.new(registration_params)
     if user.save!
-       render json: user.auth_token_hash
+       render json: user.authentication_data_hash
     else
       head status: :unauthorized
     end

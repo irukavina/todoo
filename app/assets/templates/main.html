@@ -1,17 +1,16 @@
 <table class="table">
-
     <thead>
-    <caption>Your tasks</caption>
     <tr>
-        <th>Completed</th>
-        <th>Description</th>
-        <th>Due date</th>
-        <th>Priority</th>
+
+        <th ng-class="{order:order=='completed', reversed:reversed&&order=='completed'}" ng-click="setOrder('completed')">Completed</th>
+        <th ng-class="{order:order=='description', reversed:reversed&&order=='description'}" ng-click="setOrder('description')">Description</th>
+        <th ng-class="{order:order=='due_date', reversed:reversed&&order=='due_date'}" ng-click="setOrder('due_date')">Due date</th>
+        <th ng-class="{order:order=='priority', reversed:reversed&&order=='priority'}" ng-click="setOrder('priority')">Priority</th>
         <th colspan="2"></th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat='task in tasks' ng-class='{success:task.completed}'>
+    <tr ng-repeat='task in tasks|orderBy:order:reversed' ng-class='{success:task.completed}'>
         <td><input type="checkbox" ng-model="task.completed" ng-click="updateTask(task)"/></td>
         <td>{{task.description}}</td>
         <td>{{task.due_date}}</td>

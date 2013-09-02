@@ -7,6 +7,7 @@ angular.module('todoApp.directives').directive('registrationsForm', ['sessionSer
 
       $scope.create = () ->
         $scope.registration.$save().success((data, status, xhr) ->
+          $scope.registration.clearFields()
           sessionService.signIn(data)
         )
 

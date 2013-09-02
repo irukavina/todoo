@@ -3,6 +3,10 @@ angular.module("todoApp.services").factory "userSessionService", ["$http", ($htt
   instance = (options) ->
     angular.extend(@, options)
 
+  instance::clearFields = ->
+    @email = ''
+    @password = ''
+
   instance::$save = ->
     $http.post 'http://localhost:3000/api/sessions',
       email: @email

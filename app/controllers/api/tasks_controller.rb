@@ -7,10 +7,11 @@ class Api::TasksController < Api::BaseController
 
   def update
     task = task_from_params
-    if task && task.update_attributes!(task_params_without_id)
+    if task
+      task.update_attributes!(task_params_without_id)
       render json: task.to_json
     else
-      head status: :unprocessable
+      head status: :not_found
     end
   end
 

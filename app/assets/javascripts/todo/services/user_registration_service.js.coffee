@@ -3,6 +3,11 @@ angular.module("todoApp.services").factory "userRegistrationService", ["$http", 
   instance = (options) ->
     angular.extend(@, options)
 
+  instance::clearFields = ->
+    @email = ''
+    @password = ''
+    @password_confirmation = ''
+
   instance::$save = ->
     $http.post 'http://localhost:3000/api/registrations',
       email: @email

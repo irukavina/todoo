@@ -5,7 +5,7 @@ class Api::SessionsController < Api::BaseController
       user = User.find_by_email(sign_in_params[:email]).authenticate(sign_in_params[:password])
       if user
         user.reset_auth_token!
-        render json: user.auth_token_hash
+        render json: user.authentication_data_hash
       end
     end
   end

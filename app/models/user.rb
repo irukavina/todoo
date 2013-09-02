@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
 
   has_many :tasks
 
-  def auth_token_hash
-    { auth_token: self.auth_token }
+  def authentication_data_hash
+    { email: self.email,
+      auth_token: self.auth_token }
   end
 
   def reset_auth_token!

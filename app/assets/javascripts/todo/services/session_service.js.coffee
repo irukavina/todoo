@@ -11,10 +11,12 @@ angular.module("todoApp.services").service "sessionService", ["userSessionServic
       $cookieStore.remove('_current_user')
     currentUser: () ->
       $cookieStore.get('_current_user')
+    isSignedIn: () ->
+      !!config.currentUser()
+    email: () ->
+      (config.currentUser() || {})['email']
     authToken: () ->
-      currentUser = $cookieStore.get('_current_user')
-      return currentUser['auth_token'] if currentUser && currentUser['auth_token']
-      null
+      (config.currentUser() || {})['auth_token']
     refreshAuthTokenHeaders: () ->
       Restangular.setDefaultHeaders({'Authorization': 'Token token="' + config.authToken() + '"'})
 

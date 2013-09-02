@@ -2,22 +2,30 @@
     <legend>Sign up</legend>
     <div class="control-group">
         <label class="control-label" for="email">E-mail</label>
-        <div class="controls"><input type="email" id="email" name="email" placeholder="Email" ng-model="registration.email"/></div>
+
+        <div class="controls"><input type="email" id="email" name="email" placeholder="Email"
+                                     ng-model="registration.email"/></div>
     </div>
 
     <div class="control-group">
         <label class="control-label" for="password">Password</label>
-        <div class="controls"><input type="password" id="password" name="password" placeholder="Password" ng-model="registration.password"/></div>
+
+        <div class="controls"><input type="password" id="password" name="password" placeholder="Password"
+                                     ng-model="registration.password"/></div>
     </div>
 
     <div class="control-group">
         <label class="control-label" for="password_confirmation">Password confirmation</label>
+
         <div class="controls"><input type="password" id="password_confirmation" name="password_confirmation"
-               placeholder="Password confirmation" ng-model="registration.password_confirmation"/></div>
+                                     placeholder="Password confirmation" ng-model="registration.password_confirmation"/>
+        </div>
     </div>
 
     <div class="control-group">
-        
-        <div class="controls"><button type="submit" class="btn">Sign Up</button></div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn">Sign Up</button>
+        </div>
     </div>
 </form>
